@@ -42,10 +42,10 @@ class Core extends RouteProvider
 
 		Sili::$app = new Basetools();
 
-		if (class_exists(Medoo::class)) {
+		if (class_exists(\Medoo\Medoo::class)) {
 			$config_db = self::getConfig('db');
 			if (isset($config_db['database_name']) && !empty($config_db['database_name'])) 
-				Sili::$db = new Medoo($config_db);
+				Sili::$db = new \Medoo\Medoo($config_db);
 		}
 				
 	}
